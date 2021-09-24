@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+main{
+    width: 100%;
+    min-width: 450px;
+    display: flex;
+    align-items: flex-start;
+}
+.calendar{
+    width: 80%;
+}
+.switch-week{
+    display: flex;
+    width: 100%;
+    height: 50px;
+}
+.switch-week > button{
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(15, 175, 0);
+    color: aliceblue;
+    border-radius: 5px;
+    border: 0px;
+}
+.switch-week > button:last-child{
+    margin-left: auto;
+}
+.switch-week > button:hover{
+    background-color: rgb(13, 160, 0);
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    border-left: 1px solid rgb(200, 200, 200);
+    border-top: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(200, 200, 200);
+}
+tr{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+td{
+    width: 10%;
+    height: 50px;
+    vertical-align: middle;
+    position: relative;
+}
+.date{
+    height: 30px;
+}
+.executor{
+    width: 10%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 2%;
+    color: aliceblue;
+    background-color: rgb(15, 175, 0);
+}
+.backlog{
+    width: 20%;
+    height: 100vh;
+    padding: 0.5%;
+    box-sizing: border-box;
+    background-color: rgb(200, 200, 200);
+    overflow: auto;
+}
+.backlog > h1{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+.task{
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+    border-radius: 5px;
+    padding: 3%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background-color: rgb(230, 230, 230);
+    overflow: hidden;
+    cursor: grab;
+}
+.task:hover{
+    height: auto;
+}
+.task > h1{
+    width: 50%;
+    margin: 20px 0px 20px 0px;
+    font-size: 18px;
+    cursor: default;
+}
+.task > p{
+    margin: 0px;
+    cursor: default;
+}
+.tasks{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.task-checked{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    padding: 3%;
+    box-sizing: border-box;
+    margin-top: 2px;
+    background-color: rgb(15, 175, 0);
+    color: aliceblue;
+    position: relative;
+    z-index: 1;
+}
+.task-checked > h1{
+    margin: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+}
+.task-checked:hover + .description-block{
+    display: block;
+}
+.description-block{
+    display: none;
+    width: 300px;
+    height: auto;
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10%;
+    box-sizing: border-box;
+    border: 5px solid rgb(15, 175, 0);
+    left: 70%;
+    top: 70%;
+    z-index: 2;
+}
+.description-block h1{
+    margin: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.description-block p{
+    margin: 0px;
+    text-align: left;
+}
+@media only screen and (max-width: 800px) {
+    main{
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    .backlog{
+        width: 100%;
+        height: auto;
+    }
+    .backlog h1{
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+    }
+    .task{
+        font-size: 14px;
+    }
+    .task h1{
+        font-size: 18px;
+    }
+    .calendar{
+        width: 100%;
+    }
+    .executor{
+        padding: 1%;
+    }
+    .description-block{
+        width: 80px;
+        left: -70%;
+        top: 90%;
+        font-size: 8px;
+    }
+    .description-block h1{
+        font-size: 12px;
+    }
+}
